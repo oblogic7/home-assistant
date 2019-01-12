@@ -253,8 +253,7 @@ class ConfiguredDoorBird():
             for relay in self._relay_nums:
                 entry = self.device.get_schedule_entry(event, str(relay))
                 entry.output.append(output)
-                resp = self.device.change_schedule(entry)
-                return resp
+                self.device.change_schedule(entry)
         else:
             entry = self.device.get_schedule_entry(event)
             entry.output.append(output)
